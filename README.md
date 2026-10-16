@@ -72,9 +72,8 @@ any particular regional triangular-board rules.
 - `test/game_test.dart`: rules and widget regression tests.
 - `web/index.html`: Flutter web entry point.
 
-## Verification status
+## Continuous delivery
 
-Source and archive were inspected during creation. The creation environment did
-not have Flutter or Dart installed, so compilation, analyzer, tests, and visual
-runtime checks have **not** been executed. Run the validation commands above
-with your Flutter installation before distribution.
+GitHub Actions runs `flutter analyze`, all eight tests, and a release web build
+before publishing to GitHub Pages. Source changes on `main` deploy automatically
+when validation succeeds. See the Actions tab for the latest run.
