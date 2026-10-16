@@ -67,6 +67,7 @@ void main() {
   testWidgets('game opens and goat placement updates reserve', (tester) async {
     await tester.pumpWidget(const TigerGoatApp());
     expect(find.text('Goats’ turn'), findsOneWidget);
+    await tester.ensureVisible(find.bySemanticsLabel('Row 3, column 3, empty'));
     await tester.tap(find.bySemanticsLabel('Row 3, column 3, empty'));
     await tester.pumpAndSettle();
     expect(find.text('Tigers’ turn'), findsOneWidget);
@@ -77,3 +78,4 @@ void main() {
     expect(find.text('Goats’ turn'), findsOneWidget);
   });
 }
+
